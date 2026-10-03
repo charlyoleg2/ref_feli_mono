@@ -3,7 +3,8 @@
 	"type": "module",
 	"version": "1.0.17",
 	"scripts": {
-		"build": "shx cp -r src build",
+		"build": "run-s clean copy",
+		"copy": "cp -r src build",
 		"preview": "serve build",
 		"ci": "run-s build",
 		"clean": "rimraf build node_modules dist"
@@ -11,7 +12,6 @@
 	"devDependencies": {
 		"npm-run-all2": "^9.0.3",
 		"rimraf": "^6.1.3",
-		"serve": "^14.2.6",
-		"shx": "^0.4.0"
+		"serve": "^14.2.6"
 	}
 }
