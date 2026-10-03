@@ -21,16 +21,16 @@
 		"pkg/*"
 	],
 	"scripts": {
-		"feli:clean": "npm -w feli run clean",
-		"feli:ci": "npm -w feli run ci",
-		"feli:version": "npm -w feli version patch",
-		"myWebUI:clean": "npm -w feli run clean",
+		"ref-uis:clean": "npm -w ref-uis run clean",
+		"ref-uis:ci": "npm -w ref-uis run ci",
+		"ref-uis:version": "npm -w ref-uis version patch",
+		"myWebUI:clean": "npm -w myWebUI run clean",
 		"myWebUI:ci": "npm -w myWebUI run ci",
 		"myWebUI:version": "npm -w myWebUI version patch",
-		"ci": "run-s feli:ci myWebUI:ci",
+		"ci": "run-s myWebUI:ci ref-uis:ci",
 		"clean-root": "rimraf tmp output output2 build",
-		"clean": "run-s clean-root feli:clean myWebUI:clean",
-		"versions": "run-s feli:version myWebUI:version",
+		"clean": "run-s clean-root ref-uis:clean myWebUI:clean",
+		"versions": "run-s ref-uis:version myWebUI:version",
 		"ls-workspaces": "npm -ws exec -c pwd",
 		"ls-pkg": "ls -la pkg"
 	},
